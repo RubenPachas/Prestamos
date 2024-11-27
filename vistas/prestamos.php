@@ -2,7 +2,7 @@
 //Activamos el almacenamiento en el buffer
 ob_start();
 session_start();
-if (!isset($_SESSION["nombre"])) {
+if (!isset($_SESSION['nombre'])) {
     header("Location: login.html");
 } else {
     require 'header.php';
@@ -29,7 +29,7 @@ if (!isset($_SESSION["nombre"])) {
                                         <th>SaldoTotal</th>
                                         <th>Plazo</th>
                                         <th>Estado</th>
-                                        <th>Opciones</th> 
+                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,9 +48,10 @@ if (!isset($_SESSION["nombre"])) {
                                 </div>
                                 <div class="form-group col-sm-6 col-xs-12">
                                     <label>Usuarios</label>
-                                    <select name="usuario" id="usuario" class="form-control selectpicker" data-live-search="true" required></select>
+                                    <input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $_SESSION['nombre']; ?>" readonly>
                                     <input type="hidden" class="form-control" name="fprestamo" id="fprestamo" required>
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="form-group col-sm-3 col-xs-12">
